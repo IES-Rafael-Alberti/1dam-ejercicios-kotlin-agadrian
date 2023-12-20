@@ -28,7 +28,7 @@ fun main () {
     //ejercicio06()
     //ejercicio12()
     //ejercicio15()
-    ejercicio18()
+    //ejercicio18()
     //ejercicio20()
     //ejercicio21()
 
