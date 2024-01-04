@@ -105,6 +105,123 @@ fun ejercicio18() {
 
     println(nombre.lowercase())
     println(nombre.uppercase())
-    println(nombre.replaceFirst(nombre[0], nombre[0].uppercaseChar()))
+    println(nombre.lowercase().replaceFirst(nombre[0], nombre[0].uppercaseChar()))
 }
 
+
+fun ejercicio20(){
+    print("Marque numero con el siguiente formato(+34-913724710-56): ")
+
+    val numero : String
+
+    try {
+        numero = readln()
+        if (!(numero.length == 16 && numero.startsWith("+34") && numero.endsWith("-56"))){
+            throw IllegalArgumentException("Formato del numero no valido.")
+        }
+        if (!(numero.substring(4,13).matches(Regex("[0-9]+")))){
+            throw IllegalArgumentException("No has introducido valores numericos.")
+        }
+
+        println("Su numero es ${numero.substring(4,13)}")
+    }catch (e: IllegalArgumentException){
+        println("**ERROR** - $e")
+    }
+
+}
+
+fun ejercicio21() {
+    print("Introduce una frase para ser mostrada al reves: ")
+
+    try {
+        val frase: String = readln()
+        if (frase.isNotEmpty()){
+            println(frase.reversed())
+        }
+        else{
+            throw IllegalArgumentException("No has introducido nada")
+        }
+    }catch (e: IllegalArgumentException){
+        println("*ERROR* - $e")
+    }
+    val frase = readln()
+
+}
+
+
+fun ejercicio22(){
+
+    try {
+        print("Escribe una frase: " )
+        val frase: String = readln()
+
+        println("Escribe una vocal: ")
+        val vocal: String = readln()
+
+        if (!(frase.isNotEmpty() && vocal.isNotEmpty())){
+            throw IllegalArgumentException("Ta falta datos por introducir")
+            }
+
+        println("Frase final: ${frase.replace(vocal, vocal.uppercase())}")
+    } catch (e: IllegalArgumentException){
+        println("**ERROR** - $e")
+    }
+
+}
+
+fun ejercicio24(){
+    print("Introduce precio producto en euros y dos decimales: ")
+
+    try {
+        val precio = readln().toFloat()
+        val euros = precio.toInt()
+        val cents = (precio - euros) * 100
+
+        println("El producto cuesta ${euros}€ y ${cents}cents")
+
+    }catch (e: NumberFormatException){
+        println("*ERROR* - Debes introducir numero decimal: $e")
+    }
+}
+
+fun ejercicio25(){
+    print("Introduce tu fecha de nacimiento en formato dd/mm/aaaa")
+
+    try {
+        val fecha: String = readln()
+
+        if (!(fecha[2] == '/' && fecha[5] == '/' && fecha.length == 10)){
+            throw IllegalArgumentException("El formato introducido no es correcto")
+        }
+        println("Fecha introducida: Dia ${fecha.substring(0,2)}, Mes ${fecha.substring(3,5)} Año ${fecha.substring(6)}")
+
+    }catch (e: IllegalArgumentException){
+        println("**ERROR** - $e")
+    }
+    catch (e: Exception){
+        println("**ERROR** - $e")
+    }
+
+}
+
+fun ejercicio26() {
+    print("Introduce prodcutos de la compra separados por coma: ")
+
+    val productos:String = readln()
+
+
+    if (productos.isNotBlank() && productos.contains(",") && productos != ",") {
+        val listaProductos = productos.split(",")
+
+        for (producto in listaProductos) {
+            println(producto.trim())
+        }
+    }
+    else{
+        println("Formato erroneo")
+    }
+}
+
+fun ejercicio27(){
+    
+}

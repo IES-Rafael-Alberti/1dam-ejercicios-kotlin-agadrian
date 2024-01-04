@@ -31,6 +31,11 @@ fun main () {
     //ejercicio18()
     //ejercicio20()
     //ejercicio21()
+    //ejercicio22()
+    //ejercicio24() //mejorar redondeo de los cents a 2 decimales
+    //ejercicio25() // comprobar que se iontroduce  numeros en la fecha y no letras
+    ejercicio26()
+    //ejercicio27()
 
 
 
