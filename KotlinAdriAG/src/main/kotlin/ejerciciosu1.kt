@@ -1,3 +1,7 @@
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.util.*
+
 fun ejercicio04() {
     /**
      * Pide los grados en celsius y los convierte a Farenheits
@@ -223,5 +227,26 @@ fun ejercicio26() {
 }
 
 fun ejercicio27(){
-    
+    var producto: String
+    var precio: Double
+    var unidades: Int
+
+
+    try {
+        print("Introduce producto: ")
+        producto = readln()
+
+        print("Introduce precio: ")
+        precio = readln().toDouble()
+
+        print("Introduce unidades: ")
+        unidades = readln().toInt()
+
+        val entera = String.format("%09.2f", precio)
+        println(entera)
+
+        println("Producto: ${producto}\nPrecio: \nUnidades: ")
+    }catch (e: NumberFormatException){
+        println("**ERROR** - Dato introducido erroneo")
+    }
 }
