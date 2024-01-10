@@ -54,3 +54,79 @@ fun ejemplo3() {
 
     } while (entrada.isNotEmpty())
 }
+
+
+// APUNTES CLASE 10/01/24
+
+fun apuntes(){
+    val miArray = arrayOf(1,2,3,4,5)
+    // FOR PARA MOSTRAR DATOS SOLO
+    for (num in miArray) {
+        println(num)
+    }
+
+    println("----")
+
+    // FOR PARA MODIFICAR   // indices retorna las posiciones de la lista
+    for (i in miArray.indices){
+        miArray[i]++
+    }
+
+    for (num in miArray) {
+        println(num)
+    }
+
+    println("----")
+
+    //for (i in 0..miArray.size){
+    //    println(miArray[i])
+    //}
+
+    println("----")
+
+    //impirimir de 2 en 2 (step)
+
+    for (i in 0..miArray.size step 2){
+        println(miArray)
+    }
+
+    println("----")
+
+    // al reves
+    for (i in (miArray.indices).reversed()) {
+        println(miArray)
+    }
+
+    println("----")
+
+
+    for ((i,valor) in miArray.withIndex()){
+        println("${i+1} -> $valor")
+    }
+
+    println("----")
+
+    val num = 7
+    val tabla = Array<String>(11) { i -> "$i -> $i x $num = ${num * i}"}
+
+    for (linea in tabla){
+        println(linea)
+    }
+
+    //lomismo que arriba : it es por defecto
+    tabla.forEach { println(it) }
+
+    //lo mismo pero cambiando it por linea
+    tabla.forEach { linea -> println(linea) }
+
+}
+
+fun apuntes2() {
+    val numeros = arrayOf(4, 77, 8, -88, 33, -14)
+
+    for (numero in numeros.filter { num -> num < 0 }) {
+        println(numero)
+
+    }
+    (numeros.filter {  it < 0 }).forEach{ println(it) }
+}
