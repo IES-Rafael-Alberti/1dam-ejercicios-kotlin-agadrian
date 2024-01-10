@@ -51,7 +51,8 @@ fun main () {
 
 
     //apuntes()
-    apuntes2()
+    //apuntes2()
+    apuntes3()
 }
 
 

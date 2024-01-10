@@ -126,7 +126,36 @@ fun apuntes2() {
 
     for (numero in numeros.filter { num -> num < 0 }) {
         println(numero)
-
     }
+
     (numeros.filter {  it < 0 }).forEach{ println(it) }
+}
+
+// Crear un metodo nuevo llamado holigui para la clase String. Si lo creas dentro de otra funcion, solo se puede usar en esa funcion
+fun String.holigui(nombre: String){
+    println("$nombre!")
+}
+
+fun apuntes3(){
+    "".holigui("Diego")
+}
+
+
+// ejercicio clase test   (MIRAR BIEN Y ENTENDERLO)
+fun apuntes4(){
+    fun businessEmail(s: String): Boolean {
+        return s.contains("@") && s.contains("business.com")
+    }
+
+
+    fun isAnEmail(email: (String) -> Boolean){
+        print("Introduce un email: ")
+        if (email(readln())){
+            println("Email de empresa correcto")
+        }
+        else{
+            println("Email incorrecto")
+        }
+    }
+    isAnEmail(::businessEmail)
 }
