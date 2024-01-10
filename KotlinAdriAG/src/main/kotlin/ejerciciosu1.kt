@@ -250,3 +250,7 @@ fun ejercicio27(){
         println("**ERROR** - Dato introducido erroneo")
     }
 }
+
+
+
+
