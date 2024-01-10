@@ -227,9 +227,9 @@ fun ejercicio26() {
 }
 
 fun ejercicio27(){
-    var producto: String
-    var precio: Double
-    var unidades: Int
+    val producto: String
+    val precio: Double
+    val unidades: Int
 
 
     try {
@@ -243,9 +243,9 @@ fun ejercicio27(){
         unidades = readln().toInt()
 
         val entera = String.format("%09.2f", precio)
-        println(entera)
 
-        println("Producto: ${producto}\nPrecio: \nUnidades: ")
+
+        println("Producto: ${producto}\nPrecio: $entera€ \nUnidades: $unidades")
     }catch (e: NumberFormatException){
         println("**ERROR** - Dato introducido erroneo")
     }

@@ -41,6 +41,16 @@ fun main () {
 
     //EJERCICIOS UNIDAD 2
 
+    //u2ejercicio02()
+    //u2ejercicio03()
+    //u2ejercicio06()
+    //u2ejercicio08()
+    u2ejercicio10()
+
+    //u2ejercicio
+
+
+
 
 }
 
