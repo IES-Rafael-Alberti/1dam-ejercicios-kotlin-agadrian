@@ -22,7 +22,7 @@ fun main () {
     }
 **/
 
-    //EJERCICIOS UNIDAD 1    DOCUMENTAR LAS FUNCIONES
+    // EJERCICIOS UNIDAD 1    DOCUMENTAR LAS FUNCIONES
     //ejemplo03()
     //ejercicio04()
     //ejercicio06()
@@ -39,20 +39,33 @@ fun main () {
 
 
 
-    //EJERCICIOS UNIDAD 2
+    // EJERCICIOS UNIDAD 2
 
+    // CONDICIONALES
     //u2ejercicio02()
     //u2ejercicio03()
     //u2ejercicio06()
     //u2ejercicio08()
     //u2ejercicio10()
 
-    //u2ejercicio
+    // ITERATIVAS
+    //u2ejercicio002()
+    //u2ejercicio004()
+    //u2ejercicio006()
+    //u2ejercicio007()
+    //u2ejercicio008()
+    //u2ejercicio013()
+    //u2ejercicio015()
+    //u2ejercicio018()
+    u2ejercicio019()
+    //u2ejercicio025()
+
+
 
 
     //apuntes()
     //apuntes2()
-    apuntes3()
+    //apuntes3()
 }
 
 

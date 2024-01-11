@@ -172,3 +172,256 @@ fun eleccionIngredientes(ingredientes: List<String>): String{
     while (opc !in ingredientes)
     return opc
 }
+
+
+fun u2ejercicio002() {
+    val edad = pedirEdad()
+    val listaAnos = anosCumplidos(edad)
+    println(listaAnos.first() + listaAnos.drop(1).joinToString(", "))
+}
+
+
+fun pedirEdad(): Int {
+    var edad: Int
+    do{
+        print("Introduce edad (1/125): ")
+        val intr = readln()
+        edad = try {
+            intr.toInt()
+        } catch (e: NumberFormatException){
+            0
+        }
+        if (edad !in 1..125) println("Introduce un entero en el rango 1/125!")
+
+    }while (edad !in 1..125)
+    return edad
+}
+
+fun anosCumplidos(edad: Int): List<String>{
+    val anos = mutableListOf("")
+    for (i in 1..edad){
+        anos.add(i.toString())
+    }
+    return anos
+}
+
+
+fun u2ejercicio004(){
+    print("Introduce numero: ")
+    val num = pedirIntPositivo()
+    val lista = cuentaAtras(num)
+
+    println(lista.first() + lista.drop(1).joinToString(", "))
+
+}
+
+fun pedirIntPositivo(): Int{
+    var num: Int?
+
+    do {
+        val valor = readln()
+        num = valor.toIntOrNull()
+
+        if (num == null || num < 1) println("Debes introducir un numero entero positivo: ")
+
+    }while (num == null || num < 1)
+    return num
+}
+
+fun cuentaAtras(numero: Int): List<String>{
+    val lista = mutableListOf("")
+
+    for (i in numero downTo 0){
+        lista.add(i.toString())
+    }
+    return lista
+}
+
+
+fun u2ejercicio006(){
+    print("Introduce altura triangulo: ")
+    val altura = pedirIntPositivo()
+    print(crearTriangulo(altura))
+}
+
+fun crearTriangulo(altura: Int): String{
+    var arbol = ""
+    var cont = 1
+
+    for (i in 1..altura){
+        arbol += ("*".repeat(cont)) + "\n"
+        cont++
+    }
+    return arbol
+}
+
+
+fun u2ejercicio007(){
+    print("De que numero quieres hacer la tabla de multiplicar?: ")
+    println(tablaMulti(pedirIntPositivo()))
+}
+
+fun tablaMulti(numero: Int):String{
+    var cont = 1
+    var tabla = ""
+
+    for (i in 1..10){
+        tabla += "\n$numero x $cont = ${numero*cont}"
+        cont++
+    }
+    return tabla
+}
+
+
+fun u2ejercicio008() {
+    print("Introduce un numero entero positivo: ")
+    println(trianguloRectangulo(pedirIntPositivo()))
+}
+
+fun trianguloRectangulo(num: Int):String{
+    var triangulo = ""
+
+    for (i in 1..num*2 step 2){
+        for (j in i downTo 0 step 2){
+            triangulo+= "$j "
+        }
+        triangulo+= "\n"
+    }
+
+    return triangulo
+}
+
+fun u2ejercicio013(){
+    println("Eco de lo escrito. Para salir escriba 'salir': ")
+    var texto: String
+    do {
+        texto = readln()
+
+        if (texto != "salir") println(texto) else println("Adioos!")
+    } while (texto != "salir")
+}
+
+
+fun u2ejercicio015(){
+    val suma = sumaNumeros()
+    println("La suma total es $suma")
+}
+
+fun pedirInt(): Int{
+    var num: Int?
+
+    do {
+        val valor = readln()
+        num = valor.toIntOrNull()
+
+        if (num == null) println("Debes introducir un numero entero positivo: ")
+
+    }while (num == null)
+    return num
+}
+
+fun sumaNumeros(): Int{
+    val lista = mutableListOf<Int>()
+    println("Introduce numeros a sumar (0 para salir): ")
+    do {
+        val num = pedirInt()
+        lista.add(num)
+
+    } while (num != 0)
+
+    val suma = lista.sum()
+    return suma
+}
+
+
+fun u2ejercicio018(){
+    var cont = 0
+    do {
+        print("Introduce numeros enteros positivos. -1 para acabar: ")
+        val numero = pedirInt()
+        if (numero < 0 && numero != -1){
+            println("Debes introducir numeros enteros positivos.")
+        }
+        else{
+            println("La suma de digitos introducidos es: ${sumaDigitos(numero)}")
+            if ((numero % 2) == 0) cont++
+        }
+
+    }while (numero != -1)
+    println("Cantidad de numeros pares introducida: $cont")
+
+}
+
+fun sumaDigitos(num: Int): Int{
+    var suma = 0
+    var numero = num
+
+    while (numero != 0){
+        val lastNum = numero % 10
+        suma+= lastNum
+
+        numero /= 10
+    }
+    return suma
+}
+
+
+
+
+fun u2ejercicio019(){
+    do {
+        mostrarMenu()
+        val opc = pedirOpcion()
+        val notas = mutableListOf<String>()
+
+        when (opc){
+            1 -> introducirNota(notas)
+            2-> imprimirListado(notas)
+        }
+    }while (opc != 3)
+
+}
+
+fun mostrarMenu(){
+    println("\n1 - Introduzca una nota")
+    println("2 - Imprimir listado")
+    println("3 - Finalizar programa")
+}
+
+fun pedirOpcion(): Int{
+    var opc: Int
+
+    do {
+        print("Seleccione una opcion: ")
+
+        opc = try {
+            readln().toInt()
+        } catch (e: NumberFormatException){
+            println("Opcion no valida.")
+            -1
+        }
+
+        if (opc !in 1..3) println("Opcion no valida.")
+
+    } while (opc !in 1..3)
+    return opc
+}
+
+fun introducirNota(notas: MutableList<String> ){
+    print("Introduce una nota: ")
+    val nota = readln()
+    notas.add(nota)
+    print("Se ha introducido la nota $nota")
+}
+
+fun imprimirListado(notas: MutableList<String> ){
+    if (notas.isNotEmpty()){
+        println("Lista de notas: ")
+        for (i in notas){
+            println("- $i")
+        }
+    }
+    else{
+        println("No hay nota para mostrar.")
+    }
+}
