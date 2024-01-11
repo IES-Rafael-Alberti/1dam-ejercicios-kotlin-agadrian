@@ -369,10 +369,11 @@ fun sumaDigitos(num: Int): Int{
 
 
 fun u2ejercicio019(){
+    val notas = mutableListOf<String>()
     do {
         mostrarMenu()
         val opc = pedirOpcion()
-        val notas = mutableListOf<String>()
+
 
         when (opc){
             1 -> introducirNota(notas)
@@ -411,7 +412,7 @@ fun introducirNota(notas: MutableList<String> ){
     print("Introduce una nota: ")
     val nota = readln()
     notas.add(nota)
-    print("Se ha introducido la nota $nota")
+    print("Se ha introducido la nota $nota\n")
 }
 
 fun imprimirListado(notas: MutableList<String> ){
