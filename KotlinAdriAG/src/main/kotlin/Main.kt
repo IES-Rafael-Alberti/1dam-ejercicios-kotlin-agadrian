@@ -70,8 +70,8 @@ fun main () {
 
     // LISTAS Y TUPLAS
     //u3ejercicio04()
-    u3ejercicio06()
-    //u3ejercicio08()
+    //u3ejercicio06()
+    u3ejercicio08()
     //u3ejercicio09()
     //u3ejercicio10()
     //u3ejercicio13()
