@@ -69,8 +69,8 @@ fun main () {
     // EJERCICIOS UNIDAD 3
 
     // LISTAS Y TUPLAS
-    u3ejercicio04()
-    //u3ejercicio06()
+    //u3ejercicio04()
+    u3ejercicio06()
     //u3ejercicio08()
     //u3ejercicio09()
     //u3ejercicio10()

@@ -30,3 +30,31 @@ fun pedirReintegro(): Int{
     } while (reint !in 1..9)
     return reint
 }
+
+
+
+fun u3ejercicio06(){
+    print("Cuantas asignaturas vas a introducir?: ")
+    val numAsig = pedirIntPositivo()
+
+    print(pedirNota(pedirAsig(numAsig)))
+}
+
+fun pedirAsig(numAsig: Int): MutableList<List<String>>{
+    val listaAsig = mutableListOf<List<String>>()
+    do {
+        print("Introduce nombre asignatura: ")
+        listaAsig.add(listOf(readln()))
+    } while (listaAsig.size < numAsig)
+    return listaAsig
+}
+
+fun pedirNota(listaAsig: MutableList<List<String>>): MutableList<List<String>>{
+    var nota: String
+    for (i in listaAsig.indices){
+        print("Introduce nota de ${listaAsig[i]}: ")
+        nota = readln()
+        listaAsig[i] = listaAsig[i] + nota
+    }
+    return listaAsig
+}
