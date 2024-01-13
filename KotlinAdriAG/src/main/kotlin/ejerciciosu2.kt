@@ -426,3 +426,69 @@ fun imprimirListado(notas: MutableList<String> ){
         println("No hay nota para mostrar.")
     }
 }
+
+
+fun u2ejercicio025(){
+    println("Introduce frase: ")
+    val frase = readln()
+    val listaPalabras = dividirFrase(frase)
+    println("La palabra mas larga ha sido ${palabraLarga(listaPalabras)} y habian ${contarPalabras(listaPalabras)} palabras")
+
+
+
+}
+
+fun dividirFrase(frase: String): List<String>{
+    return frase.split(" ")
+}
+
+fun contarPalabras(frase: List<String>):Int{
+    return frase.count()
+}
+
+fun palabraLarga(frase: List<String>):String? {
+    return frase.maxByOrNull { it.length }
+}
+
+
+
+//Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla todos los números impares desde 1 hasta ese número separados por comas.
+fun u2ejercicio0002(){
+    print("Introduce un un numero entero positivo: ")
+    val num = pedirIntPositivo()
+    var primer = true
+    for (i in 1..num){
+        if ((i % 2) != 0){
+            if (!primer){
+                print(", ")
+            }
+            print(i)
+            primer = false
+        }
+    }
+}
+
+
+// Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas. Deberá solicitar el número hasta introducir uno correcto.
+fun u2ejercicio0003(){
+    val num = pedirIntPositivo()
+    var primer = true
+    for (i in num downTo 0){
+        if (!primer){
+            print(", ")
+        }
+        print(i)
+        primer = false
+    }
+}
+
+// Escribir un programa que pida al usuario un número entero, si la entrada no es correcta, mostrará el mensaje "La entrada no es correcta" y lanzará la excepción capturada.
+fun u2ejercicio0004(){
+    print("Introduce un numero entero: ")
+    val num = try {
+        readln().toInt()
+    } catch (e: NumberFormatException){
+        println("La entrada no es correcta: $e")
+    }
+    print(num)
+}

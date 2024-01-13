@@ -57,9 +57,24 @@ fun main () {
     //u2ejercicio013()
     //u2ejercicio015()
     //u2ejercicio018()
-    u2ejercicio019()
+    //u2ejercicio019()
     //u2ejercicio025()
 
+    // EXCEPCIONES
+    //u2ejercicio0002()
+    //u2ejercicio0003()
+    //u2ejercicio0004()
+
+
+    // EJERCICIOS UNIDAD 3
+
+    // LISTAS Y TUPLAS
+    //u3ejercicio04()
+    //u3ejercicio06()
+    //u3ejercicio08()
+    //u3ejercicio09()
+    //u3ejercicio10()
+    //u3ejercicio13()
 
 
 
