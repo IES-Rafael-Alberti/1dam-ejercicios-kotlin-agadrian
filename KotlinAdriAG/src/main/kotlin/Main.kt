@@ -71,10 +71,19 @@ fun main () {
     // LISTAS Y TUPLAS
     //u3ejercicio04()
     //u3ejercicio06()
-    u3ejercicio08()
+    //u3ejercicio08()
     //u3ejercicio09()
     //u3ejercicio10()
     //u3ejercicio13()
+
+    // DICCIONARIOS
+    //u3ejercicio003()
+    //u3ejercicio005()
+    //u3ejercicio006()
+    //u3ejercicio007()
+    //u3ejercicio008()
+    //u3ejercicio010()
+    //u3ejercicio011()
 
 
 

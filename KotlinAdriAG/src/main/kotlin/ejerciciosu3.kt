@@ -61,5 +61,50 @@ fun pedirNota(listaAsig: MutableList<List<String>>): MutableList<List<String>>{
 
 
 fun u3ejercicio08(){
+    print("Introduce palabra a comprobar si es palindromo: ")
+    val palabra = readln()
 
+    if (palabra == palabra.reversed()){
+        print("Es palindromo")
+    }
+    else {
+        println("No es palindromo")
+    }
+}
+
+
+fun u3ejercicio09(){
+    print("Introduce palabra para contar sus vocales: ")
+    val palabra = readln()
+    print(contarVocales(palabra))
+
+}
+
+fun contarVocales(palabra: String): MutableList<MutableList<Any>> {
+    val lista: MutableList<MutableList<Any>> = mutableListOf( mutableListOf("a", 0), mutableListOf("e",0), mutableListOf("i", 0), mutableListOf("o",0), mutableListOf("u", 0) )
+
+
+    for (vocal in lista){
+        vocal[1] = palabra.count() {it.toString() == vocal[0]} // itera sobre la palabra, y va contando a medida que la condicion  entre llaves se cumple. it toma cada valor del string "h" "o" "l" "a" y lo compara con vocal[0]
+    }
+
+    return lista
+}
+
+
+
+fun u3ejercicio10(){
+    val lista = listOf(50, 75, 46, 22, 80, 65, 8)
+
+    println("Numero maximo: ${lista.max()} Numero minimo: ${lista.min()}")
+}
+
+fun u3ejercicio13(){
+    println("Introduce una serie de numeros separados por coma: ")
+    val numeros = readln().split(",").map { it.toDouble() } // el it le hace el todouble a cada numero
+    println(numeros.sum() / numeros.count())
+}
+
+fun u3ejercicio003(){
+    
 }
