@@ -1,4 +1,6 @@
-
+/**
+ * Se comprueba que la cadena de texto introducida coincide con otra establecida sin tener en cuennta mayus/minus. Se imprime si coincide o no
+ */
 fun u2ejercicio02() {
     val contrasena = "p4ssw0rd"
     print("Intorduce contraseña: ")
@@ -12,12 +14,20 @@ fun u2ejercicio02() {
     }
 }
 
+/**
+ * Se comprueba las contraseñas pasado como parametros.
+ * @param contrasena String - La contraseña establecida
+ * @param contrasena2 String - La contraseña que se comprueba si es igual a contrasena
+ * @return bool - true/false : true si coincide, false si no
+ */
 fun comprobarContrasena(contrasena: String, contrasena2: String): Boolean {
 
     return contrasena.lowercase() == contrasena2.lowercase()
 }
 
-
+/**
+ * Divide 2 numeros y muestra el resultado. Si el divisor es 0, lanza excepcion.
+ */
 fun u2ejercicio03() {
     print("Introduce numero: ")
     val n1 = readln()
@@ -35,14 +45,12 @@ fun u2ejercicio03() {
             else{
                 throw ArithmeticException("El dividendo no puede ser 0!!!!")
             }
-
         } catch (e: ArithmeticException){
             println("**ERROR** -  $e")
         }
         catch (e: Exception){
             println("*ERROR* - $e")
         }
-
     }
     else{
         println("ERROR - Debes initroducir valores numericos")
@@ -58,9 +66,10 @@ fun comprobarNumerico(num: String): Boolean {
     return num.toDoubleOrNull() != null
 }
 
-
+/**
+ * Imprime a que grupo (A ó B) pertenece alguien segun su nombre y sexo
+ */
 fun u2ejercicio06(){
-
     print("Introduce nombre: ")
     val nombre = readln()
     print("Introduce sexo (m/f): ")
@@ -76,6 +85,14 @@ fun u2ejercicio06(){
     }
 }
 
+/**
+ * Comprueba a que grupo pertenece alguien segun su nombre y sexo
+ * @param nombre : String nombre a comprobar
+ * @param sexo : String sexo a comprobar
+ * @return A: si pertenece al grupo A
+ *         B: si pertenece al grupo B
+ *         "Sexo no valido": si el sexo introducido no es valido para su comprobacion
+ */
 fun grupoCorrespondiente(nombre: String, sexo: String): String{
     if (sexo.lowercase() == "f"){
         return if (nombre.lowercase() < "m") "A" else "B"
@@ -88,7 +105,9 @@ fun grupoCorrespondiente(nombre: String, sexo: String): String{
     }
 }
 
-
+/**
+ * Indica el el salario que le corresponde a un empleado dependiendo de su nivel de rendimiento
+ */
 fun u2ejercicio08(){
     print("Puntuacion del usuario (0.0, 0.4, 0.6, >0.6): ")
 
@@ -112,6 +131,12 @@ fun u2ejercicio08(){
     }
 }
 
+/**
+ * Comprueba el nivel de rendimiento de un empleado en base a su puntuacion
+ * @param puntuacion : Dobule puntuacion del empleado en cuestion
+ * @return Devuelve una cadena que indica el nivel de rendimiento ("Inaceptable", "Aceptable", "Meritorio") y puntuacion
+ *
+ */
 fun nivelRendimiento(puntuacion: Double): Pair<String?, Double> {
     return when {
         puntuacion == 0.0 -> Pair("Inaceptable", puntuacion)
@@ -121,6 +146,9 @@ fun nivelRendimiento(puntuacion: Double): Pair<String?, Double> {
     }
 }
 
+/**
+ * Pregunta a un usuario que tipo de piza quiere y sus ingredientes. Luego muestra los datos elejidos
+ */
 fun u2ejercicio10() {
     val ingredientesVeg = listOf("pimiento","tofu")
     val ingredientesNoVeg = listOf("peperoni","jamón","salmón")
@@ -173,14 +201,19 @@ fun eleccionIngredientes(ingredientes: List<String>): String{
     return opc
 }
 
-
+/**
+ * Muestra desde 1 hasta la edad introducida
+ */
 fun u2ejercicio002() {
     val edad = pedirEdad()
     val listaAnos = anosCumplidos(edad)
     println(listaAnos.first() + listaAnos.drop(1).joinToString(", "))
 }
 
-
+/**
+ * Pide la edad comrobando que este en un rango de 1-125 años
+ * @return edad Int - Edad introducida por usuario
+ */
 fun pedirEdad(): Int {
     var edad: Int
     do{
@@ -197,6 +230,11 @@ fun pedirEdad(): Int {
     return edad
 }
 
+/**
+ * Crea una lista que va desde 1 hsta la edad pasada por parametro
+ * @param edad Int: edad para crear la lista desde 1-edad
+ * @return anos : Lista creada lista para usar
+ */
 fun anosCumplidos(edad: Int): List<String>{
     val anos = mutableListOf("")
     for (i in 1..edad){
@@ -205,7 +243,9 @@ fun anosCumplidos(edad: Int): List<String>{
     return anos
 }
 
-
+/**
+ * Pide un numero positivo entero y muestra una cuenta atras desde ese numero hata 0
+ */
 fun u2ejercicio004(){
     print("Introduce numero: ")
     val num = pedirIntPositivo()
@@ -215,6 +255,10 @@ fun u2ejercicio004(){
 
 }
 
+/**
+ * Pide por consola un numero y compprueba que sea valido, entero positivo
+ * @return num Devuelve el numero introducido correctamente
+ */
 fun pedirIntPositivo(): Int{
     var num: Int?
 
@@ -228,6 +272,11 @@ fun pedirIntPositivo(): Int{
     return num
 }
 
+/**
+ * Crea una lista de numeros en cuenta atras desde un numero pasado por parametro hasta 0
+ * @param numero Int: numero entero positivo
+ * @return lista La lista creada correctamente
+ */
 fun cuentaAtras(numero: Int): List<String>{
     val lista = mutableListOf("")
 
@@ -237,13 +286,20 @@ fun cuentaAtras(numero: Int): List<String>{
     return lista
 }
 
-
+/**
+ * Crea un triangulo de cracteres *
+ */
 fun u2ejercicio006(){
     print("Introduce altura triangulo: ")
     val altura = pedirIntPositivo()
     print(crearTriangulo(altura))
 }
 
+/**
+ * Crea el trinngulo de la altura pasada por parametro
+ * @param altura Int - Altura desada para crear el triangulo
+ * @return arbol String - Devuelve una cadena de texto que contiene el triangulo ya creado
+ */
 fun crearTriangulo(altura: Int): String{
     var arbol = ""
     var cont = 1
@@ -255,12 +311,19 @@ fun crearTriangulo(altura: Int): String{
     return arbol
 }
 
-
+/**
+ * Muestra un tabla de multiplicar del numero deesado
+ */
 fun u2ejercicio007(){
     print("De que numero quieres hacer la tabla de multiplicar?: ")
     println(tablaMulti(pedirIntPositivo()))
 }
 
+/**
+ * Crea la tabla de multiplicar del numero pasado por parametro
+ * @param numero Int: numero del que se creara la tabla
+ * @return tabla Str: Cadena de texto con la tabla de multiplicar y sus resultados en el interior
+ */
 fun tablaMulti(numero: Int):String{
     var cont = 1
     var tabla = ""
@@ -272,12 +335,19 @@ fun tablaMulti(numero: Int):String{
     return tabla
 }
 
-
+/**
+ * Muestra un triangulo rectangulo de numeros que decrecen de 2 en 2
+ */
 fun u2ejercicio008() {
     print("Introduce un numero entero positivo: ")
     println(trianguloRectangulo(pedirIntPositivo()))
 }
 
+/**
+ * Crea un tringulo rectangulo de la altura del parametro num
+ * @param num Int: altura del triangulo rectangulo
+ * @return triangulo String: cadena de texto que contiene el triangulo creado
+ */
 fun trianguloRectangulo(num: Int):String{
     var triangulo = ""
 
@@ -287,10 +357,12 @@ fun trianguloRectangulo(num: Int):String{
         }
         triangulo+= "\n"
     }
-
     return triangulo
 }
 
+/**
+ * Muestra por pantalla lo mismo que se escribe. Se usa salir para acabar
+ */
 fun u2ejercicio013(){
     println("Eco de lo escrito. Para salir escriba 'salir': ")
     var texto: String
@@ -301,12 +373,18 @@ fun u2ejercicio013(){
     } while (texto != "salir")
 }
 
-
+/**
+ * Muestra la suma de los numeros introducidos
+ */
 fun u2ejercicio015(){
     val suma = sumaNumeros()
     println("La suma total es $suma")
 }
 
+/**
+ * Pide un numero y compruba que sea positivo
+ * @return num Int: devuelve el numero introducido
+ */
 fun pedirInt(): Int{
     var num: Int?
 
@@ -320,6 +398,10 @@ fun pedirInt(): Int{
     return num
 }
 
+/**
+ * Suma todos los numeros introducidos hasta que se introduce 0 y se para
+ * @return suma Int: Resultado de la suma de los numeros
+ */
 fun sumaNumeros(): Int{
     val lista = mutableListOf<Int>()
     println("Introduce numeros a sumar (0 para salir): ")
@@ -333,7 +415,9 @@ fun sumaNumeros(): Int{
     return suma
 }
 
-
+/**
+ * Pide y muestra la suma de los digitos que componen cada numero introducido. Deben ser ints positivos
+ */
 fun u2ejercicio018(){
     var cont = 0
     do {
@@ -352,6 +436,11 @@ fun u2ejercicio018(){
 
 }
 
+/**
+ * Calcula la suma de los digitos que componen un numero
+ * @param num Int: numero para operar
+ * @return suma Int: el resultado de la suma de los digito de un numero
+ */
 fun sumaDigitos(num: Int): Int{
     var suma = 0
     var numero = num
@@ -365,15 +454,14 @@ fun sumaDigitos(num: Int): Int{
     return suma
 }
 
-
-
-
+/**
+ * Muestra un menu con 3 opciones y pide elejir una. Al elegirla, redirige a otra funcion
+ */
 fun u2ejercicio019(){
     val notas = mutableListOf<String>()
     do {
         mostrarMenu()
         val opc = pedirOpcion()
-
 
         when (opc){
             1 -> introducirNota(notas)
@@ -383,12 +471,19 @@ fun u2ejercicio019(){
 
 }
 
+/**
+ * Muestra las opciones del menu principal
+ */
 fun mostrarMenu(){
     println("\n1 - Introduzca una nota")
     println("2 - Imprimir listado")
     println("3 - Finalizar programa")
 }
 
+/**
+ * Pide una opcion de las posiblesy comprueba que es valida haciendo un checkeo del rango de opciones
+ * @return opc Int: opcion elejida
+ */
 fun pedirOpcion(): Int{
     var opc: Int
 
@@ -401,13 +496,16 @@ fun pedirOpcion(): Int{
             println("Opcion no valida.")
             -1
         }
-
         if (opc !in 1..3) println("Opcion no valida.")
 
     } while (opc !in 1..3)
     return opc
 }
 
+/**
+ * Pide que se introduzca una nota y las almacenas en un lista
+ * @param notas MutableList: lista de notas para almacenarlas
+ */
 fun introducirNota(notas: MutableList<String> ){
     print("Introduce una nota: ")
     val nota = readln()
@@ -415,6 +513,9 @@ fun introducirNota(notas: MutableList<String> ){
     print("Se ha introducido la nota $nota\n")
 }
 
+/**
+ * Imprime el listado de notas solo si existe, si no muedtra un mensaje de que no hay notas
+ */
 fun imprimirListado(notas: MutableList<String> ){
     if (notas.isNotEmpty()){
         println("Lista de notas: ")
@@ -427,21 +528,29 @@ fun imprimirListado(notas: MutableList<String> ){
     }
 }
 
-
+/**
+ *Muestra la palabra mas larga de una frase introducida
+ */
 fun u2ejercicio025(){
     println("Introduce frase: ")
     val frase = readln()
     val listaPalabras = dividirFrase(frase)
     println("La palabra mas larga ha sido ${palabraLarga(listaPalabras)} y habian ${contarPalabras(listaPalabras)} palabras")
-
-
-
 }
 
+/**
+ * Divide la frase introducida mediante espacios
+ * @param frase String: la frase a dividir
+ * @return frase: List<string> - la frase dividida
+ */
 fun dividirFrase(frase: String): List<String>{
     return frase.split(" ")
 }
 
+/**
+ * Cuenta las palabras que hay en una lista de palabras
+ *
+ */
 fun contarPalabras(frase: List<String>):Int{
     return frase.count()
 }

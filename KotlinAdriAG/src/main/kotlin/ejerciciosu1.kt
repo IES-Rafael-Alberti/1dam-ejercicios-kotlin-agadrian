@@ -24,7 +24,7 @@ fun ejercicio04() {
 
 
 /**
- *
+ * Pide precio final de un producto y lo desglosa en IVA de un 10%
  */
 fun ejercicio06() {
     println("Introduce importe final: ")
@@ -48,7 +48,9 @@ fun ejercicio06() {
     }
 }
 
-
+/**
+ * Calcula IMC pidiendo peso y estatura
+ */
 fun ejercicio12() {
     var peso = 0.0
     var estatura = 0.0
@@ -80,6 +82,9 @@ fun ejercicio12() {
     }
 }
 
+/**
+ * Calcula la cantidad de dinero ahorrado tras x años y x% de interes
+ */
 fun ejercicio15() {
 
     println("Introduce cantidad deposito:")
@@ -102,7 +107,9 @@ fun ejercicio15() {
     }
 }
 
-
+/**
+ * Muestra la palabra introducida de tres formas, todas las letras en mayusculas, todas en minusculas y la primera solo en mayusuclas
+ */
 fun ejercicio18() {
     print("Introduce tu nombre: ")
     val nombre = readln()
@@ -112,7 +119,9 @@ fun ejercicio18() {
     println(nombre.lowercase().replaceFirst(nombre[0], nombre[0].uppercaseChar()))
 }
 
-
+/**
+ * Pide un numero de tlfn con un formato en concreto y lo muestra sin prefijo ni extension
+ */
 fun ejercicio20(){
     print("Marque numero con el siguiente formato(+34-913724710-56): ")
 
@@ -134,6 +143,9 @@ fun ejercicio20(){
 
 }
 
+/**
+ * Muestra la frase introducida invertida
+ */
 fun ejercicio21() {
     print("Introduce una frase para ser mostrada al reves: ")
 
@@ -152,7 +164,9 @@ fun ejercicio21() {
 
 }
 
-
+/**
+ * Muestra una letra x en mayusculas en una frase x introducida
+ */
 fun ejercicio22(){
 
     try {
@@ -173,6 +187,9 @@ fun ejercicio22(){
 
 }
 
+/**
+ * Pide el precio con dos decimales y muestra el numero de euros y centimos por separado
+ */
 fun ejercicio24(){
     print("Introduce precio producto en euros y dos decimales: ")
 
@@ -188,6 +205,9 @@ fun ejercicio24(){
     }
 }
 
+/**
+ * Pide una fecha y muestra por separado dia,mes y año
+ */
 fun ejercicio25(){
     print("Introduce tu fecha de nacimiento en formato dd/mm/aaaa")
 
@@ -208,11 +228,13 @@ fun ejercicio25(){
 
 }
 
+/**
+ * Pide productos separados por coma, y los muestra por separado en lineas nuevas
+ */
 fun ejercicio26() {
     print("Introduce prodcutos de la compra separados por coma: ")
 
     val productos:String = readln()
-
 
     if (productos.isNotBlank() && productos.contains(",") && productos != ",") {
         val listaProductos = productos.split(",")
@@ -226,6 +248,9 @@ fun ejercicio26() {
     }
 }
 
+/**
+ * Pide nombre prodcuto, precio y unidades. Calcula y muestra el precio con un formato de 6 digitos enteros y 2 decimales, las unidades con 3 digitos, y el coste total con 8 entero y 2 decimales
+ */
 fun ejercicio27(){
     val producto: String
     val precio: Double
