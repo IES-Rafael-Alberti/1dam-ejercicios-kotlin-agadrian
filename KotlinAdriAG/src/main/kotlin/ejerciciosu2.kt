@@ -337,13 +337,13 @@ fun sumaNumeros(): Int{
 fun u2ejercicio018(){
     var cont = 0
     do {
-        print("Introduce numeros enteros positivos. -1 para acabar: ")
+        print("Introduce un numero entero positivo. -1 para acabar: ")
         val numero = pedirInt()
         if (numero < 0 && numero != -1){
-            println("Debes introducir numeros enteros positivos.")
+            println("Debes introducir un numero entero positivo.")
         }
         else{
-            println("La suma de digitos introducidos es: ${sumaDigitos(numero)}")
+            println("La suma de digitos del numero introducido es: ${sumaDigitos(numero)}")
             if ((numero % 2) == 0) cont++
         }
 
