@@ -549,19 +549,29 @@ fun dividirFrase(frase: String): List<String>{
 
 /**
  * Cuenta las palabras que hay en una lista de palabras
+ * @param frase List : lista que contiene las palabras de la frase
+ * @return frase: Int - Devuelve el número de palabras que hay
  *
  */
 fun contarPalabras(frase: List<String>):Int{
     return frase.count()
 }
 
+/**
+ * Comprueba cual es la palabra más larga
+ * @param frase List: lista que contiene las palabras de la frase
+ * @return frase String o nulo: Devuelve la palabra mas larga o nulo si no hay palabras
+ */
 fun palabraLarga(frase: List<String>):String? {
     return frase.maxByOrNull { it.length }
 }
 
 
-
 //Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla todos los números impares desde 1 hasta ese número separados por comas.
+/**
+ * Pide un umero entero positivo y muestra por pantalla todos los numeros impares desde 1 - numero introducido
+ *
+ */
 fun u2ejercicio0002(){
     print("Introduce un un numero entero positivo: ")
     val num = pedirIntPositivo()
@@ -579,6 +589,9 @@ fun u2ejercicio0002(){
 
 
 // Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas. Deberá solicitar el número hasta introducir uno correcto.
+/**
+ * Pide un entero positivo y muestra desde numero - 0 separados por comas
+ */
 fun u2ejercicio0003(){
     val num = pedirIntPositivo()
     var primer = true
@@ -592,6 +605,9 @@ fun u2ejercicio0003(){
 }
 
 // Escribir un programa que pida al usuario un número entero, si la entrada no es correcta, mostrará el mensaje "La entrada no es correcta" y lanzará la excepción capturada.
+/**
+ * Pide un numero entero y si no es correcto, muestra un mensaje informativo de errror ademas de lanzar una excepcion.
+ */
 fun u2ejercicio0004(){
     print("Introduce un numero entero: ")
     val num = try {
