@@ -232,5 +232,141 @@ fun mostrarLista(lista: MutableMap<String, Double>){
 
 
 fun u3ejercicio008(){
+    println("Introduce datos al diccionario con el formato:  <palabra>:<traducción>, <palabra>:<traducción>, <palabra>:<traducción>")
+    val palabras = readln()
+    val diccionario = crearDiccionario(palabras)
+
+    println("Introduce una frase para traducir: ")
+    val frase = readln()
+    print(traducirFrase(frase, diccionario))
+}
+
+fun crearDiccionario(palabras: String): Map<String, String>{
+    var lista = mutableListOf<Pair<String, String>>()
+
+    for (palabra in palabras.split(", ")){
+        val pares = palabra.split(":")
+        lista.add(pares[0].trim() to pares[1].trim())
+    }
+    return lista.toMap()
+}
+
+fun traducirFrase(frase: String, diccionario: Map<String, String>): String{
+    var palabras = frase.split(" ")
+    val traducido = mutableListOf<String>()
+
+    for (palabra in palabras){
+        traducido.add(diccionario.getOrDefault(palabra, palabra))
+    }
+
+    return "Frase traducida: ${traducido.joinToString(" ")}"
+}
+
+
+fun u3ejercicio010(){
+
+}
+
+fun u3ejercicio011(){
+
+}
+
+
+
+
+fun u3ejercicio0001(){
+    val lista: List<List<Any>> = listOf(
+        listOf("Nuria Costa", 5, 12780.78, "Calle Las Flores 355"),
+        listOf("Jorge Russo", 7, 699.0, "Mirasol 218"),
+        listOf("Nuria Costa", 7, 532.90, "Calle Las Flores 355"),
+        listOf("Julián Rodriguez", 12, 5715.99, "La Mancha 761"),
+        listOf("Jorge Russo", 15, 958.0, "Mirasol 218")
+    )
+
+    println(" Lista domicilios: ${domiciliosClientes(lista).joinToString(", ")}}")
+}
+
+fun domiciliosClientes(lista: List<List<Any>>): Set<Any>{
+    val domicilios = mutableSetOf<Any>()
+    for (elemento in lista){
+        domicilios.add(elemento[3])
+    }
+    return domicilios
+}
+
+
+fun u3ejercicio0002() {
+    println("introduce nombres alumnos primaria: ")
+    var alumnPrimaria = pedirNombre()
+
+    println("introduce nombres alumnos secundaria: ")
+    var alumSecundaria = pedirNombre()
+
+
+    println("Nombres unicos: ${alumnPrimaria union alumSecundaria}")
+    println("Nombres repetidos : ${alumnPrimaria intersect alumSecundaria}")
+    println("Nombres de primaria y no secundaria : ${alumnPrimaria subtract alumSecundaria}")
+
+}
+
+fun pedirNombre(): Set<String>{
+    val nombres = mutableSetOf<String>()
+    do {
+        println("Nombre: ")
+        val nombre = readln()
+
+        if (nombre != "x") nombres.add(nombre)
+    }while (nombre != "x")
+
+    return nombres
+}
+
+fun u3ejercicio0003(){
+
+}
+
+fun u3ejercicio0004(){
+    val setFrutas1 = mutableSetOf("manzana", "pera", "naranja", "plátano", "uva")
+    val setFrutas2 = mutableSetOf("manzana", "pera", "durazno", "sandía", "uva")
+
+    println("Frutas unicos: ${setFrutas1 intersect  setFrutas2}")
+    println("Solo en frutas1 y no frutas2 : ${setFrutas1 subtract setFrutas2}")
+    println("Solo en frutas2 y no frutas1 : ${setFrutas2 subtract setFrutas1}")
+}
+
+fun u3ejercicio0005(){
+    val numeros = mutableSetOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    println("Multilpos de 2: ${conjuntoPares(numeros)}\nMultiplos de 3: ${conjuntoMultiplo3(numeros)}\nInterseccion de multilpos de 2 y 3: ${conjuntoPares(numeros) intersect conjuntoMultiplo3(numeros)}")
+}
+
+fun conjuntoPares(numeros: Set<Int>): Set<Int> {
+    val pares = mutableSetOf<Int>()
+
+    for (numero in numeros){
+        if (numero % 2 == 0){
+            pares.add(numero)
+        }
+    }
+    return pares
+}
+
+fun conjuntoMultiplo3(numeros: Set<Int>): Set<Int>{
+    val pares = mutableSetOf<Int>()
+
+    for (numero in numeros){
+        if (numero % 3 == 0){
+            pares.add(numero)
+        }
+    }
+    return pares
+}
+
+fun u3ejercicio0006(){
+    val vocales = mutableSetOf('a', 'e', 'i', 'o', 'u')
+    val abecedario = ('a'..'z').toSet()
+
+    val consonantes = abecedario - vocales
+    println("Consonantes: $consonantes")
+    println("Letras comunes: ${vocales union  consonantes}")
 
 }

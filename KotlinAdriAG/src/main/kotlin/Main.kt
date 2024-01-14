@@ -81,10 +81,17 @@ fun main () {
     //u3ejercicio005()
     //u3ejercicio006()
     //u3ejercicio007()
-    u3ejercicio008()
+    //u3ejercicio008()
     //u3ejercicio010()
     //u3ejercicio011()
 
+    //CONJUNTOS
+    //u3ejercicio0001()
+    //u3ejercicio0002()
+    //u3ejercicio0003()
+    //u3ejercicio0004()
+    //u3ejercicio0005()
+    u3ejercicio0006()
 
 
     //apuntes()
