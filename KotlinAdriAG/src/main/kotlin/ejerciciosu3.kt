@@ -1,3 +1,5 @@
+import com.sun.jdi.AbsentInformationException
+import javax.sound.sampled.DataLine.Info
 
 fun u3ejercicio04(){
     val listaNumeros = mutableListOf<Int>()
@@ -106,5 +108,129 @@ fun u3ejercicio13(){
 }
 
 fun u3ejercicio003(){
-    
+    val precioFrutas = mapOf(
+        "platano" to 1.35,
+        "manzana" to 0.80,
+        "pera" to 0.85,
+        "naranja" to 0.70
+    )
+    println(precioFrutas)
+    println("Elige una fruta: ")
+    val opc = readln()
+
+    if (precioFrutas.containsKey(opc)){
+        println("Cuantos kilos quieres: ")
+        val kilos: Double = try {
+            readln().toDouble()
+        }catch (e: NumberFormatException){
+            println("**ERR*R - $e")
+            0.0
+        }
+
+        if (kilos <= 0) print("ERROR - Kilos introducidos no validos.")
+
+        println("Has elejido $kilos de $opc. Total: ${precioFrutas[opc]!!.toDouble() * kilos}")
+
+
+    } else{
+        print("No existe esa fruta.")
+    }
+
+}
+
+
+fun u3ejercicio005(){
+    val creditos = mapOf(
+        "Matematicas" to 6,
+        "Fisica" to 4,
+        "Quimica" to 5
+    )
+
+    for ((asignatura, credito) in creditos){
+        println("La asignatura $asignatura tiene $credito creditos.")
+    }
+
+    println("Los creditos totales del curso son: ${creditos.values.sum()}")
+}
+
+
+
+fun u3ejercicio006(){
+    val informacion = mutableMapOf<String, String>()
+    agregarDato(informacion)
+
+}
+
+fun agregarDato(informacion: MutableMap<String, String>){
+    println("Introduce nombre: ")
+    informacion["Nombre"] = readln()
+    mostrarDatos(informacion)
+
+    println("Introduce edad: ")
+    informacion["Edad"] = readln()
+    mostrarDatos(informacion)
+
+    println("Introduce telefono: ")
+    informacion["Telefono"] = readln()
+    mostrarDatos(informacion)
+
+    println("Introduce sexo: ")
+    informacion["Sexo"] = readln()
+    mostrarDatos(informacion)
+
+    println("Introduce correo: ")
+    informacion["Correo"] = readln()
+    mostrarDatos(informacion)
+}
+
+fun mostrarDatos(informacion: MutableMap<String, String>){
+    println("\n**DATOS ACTUALIZADOS**")
+    for ((dato, valor) in informacion){
+        println("$dato : $valor")
+    }
+    println()
+}
+
+
+fun u3ejercicio007(){
+    val lista = mutableMapOf<String, Double>()
+    aniadirArticulos(lista)
+    mostrarLista(lista)
+}
+
+fun aniadirArticulos(lista: MutableMap<String, Double>){
+    do {
+        println("Introduce articulo (enter para acabar): ")
+        val articulo = readln()
+
+        if (articulo != ""){
+            var precio: Double
+            do {
+                println("Introduce precio: ")
+                try {
+                    precio = readln().toDouble()
+                    if (precio <= 0) println("El precio debe ser positivo")
+
+                }catch (e: NumberFormatException){
+                    println("Debes introducir un valor numerico!")
+                    precio = 0.0
+                }
+            }while (precio <= 0)
+
+            lista[articulo] = precio
+        }
+    }while (articulo != "")
+}
+
+fun mostrarLista(lista: MutableMap<String, Double>){
+    println("Lista de la compra: ")
+    for ((item,precio) in lista){
+        println("$item : $precio")
+    }
+    println("Total : ${lista.values.sum()}")
+}
+
+
+fun u3ejercicio008(){
+
 }

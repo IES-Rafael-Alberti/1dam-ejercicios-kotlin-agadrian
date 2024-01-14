@@ -81,7 +81,7 @@ fun main () {
     //u3ejercicio005()
     //u3ejercicio006()
     //u3ejercicio007()
-    //u3ejercicio008()
+    u3ejercicio008()
     //u3ejercicio010()
     //u3ejercicio011()
 
