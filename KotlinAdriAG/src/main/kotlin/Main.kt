@@ -1,6 +1,6 @@
 fun main () {
     //HACER MENU CON LAS OPCIONES
-
+    u3ejercicio0001v2()
     var opc: Int
     do {
         mostrarMenuPrincipal()

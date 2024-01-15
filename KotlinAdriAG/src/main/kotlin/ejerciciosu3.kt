@@ -283,7 +283,12 @@ fun u3ejercicio0001(){
         listOf("Jorge Russo", 15, 958.0, "Mirasol 218")
     )
 
-    println(" Lista domicilios: ${domiciliosClientes(lista).joinToString(", ")}}")
+    val lista2 = listOf<List<Any>>(
+        listOf("DF", 3,4),
+        listOf("hola")
+    )
+
+    println("Lista domicilios: ${domiciliosClientes(lista).joinToString(", ")}}")
 }
 
 fun domiciliosClientes(lista: List<List<Any>>): Set<Any>{
@@ -294,13 +299,51 @@ fun domiciliosClientes(lista: List<List<Any>>): Set<Any>{
     return domicilios
 }
 
+// OTRA FORMA DE HACER EL DE ARRIBA PERO CON FOREACH EN VEZ DE FOR IN //
+
+fun u3ejercicio0001v2(){
+    val lista: List<List<Any>> = listOf(
+        listOf("Nuria Costa", 5, 12780.78, "Calle Las Flores 355"),
+        listOf("Jorge Russo", 7, 699.0, "Mirasol 218"),
+        listOf("Nuria Costa", 7, 532.90, "Calle Las Flores 355"),
+        listOf("Julián Rodriguez", 12, 5715.99, "La Mancha 761"),
+        listOf("Jorge Russo", 15, 958.0, "Mirasol 218")
+    )
+    print(domicilios(lista))
+}
+
+fun domicilios(compras: List<List<Any>>): List<String>{
+    val domisUnicos = mutableSetOf<String>()
+
+    compras.forEach { domisUnicos.add(it[3].toString()) }
+    return domisUnicos.toList().sorted()
+}
+
+//  OTRA FORMA MAS AUN  //
+fun u3ejercicio0001v3(){
+    val lista: List<List<Any>> = listOf(
+        listOf("Nuria Costa", 5, 12780.78, "Calle Las Flores 355"),
+        listOf("Jorge Russo", 7, 699.0, "Mirasol 218"),
+        listOf("Nuria Costa", 7, 532.90, "Calle Las Flores 355"),
+        listOf("Julián Rodriguez", 12, 5715.99, "La Mancha 761"),
+        listOf("Jorge Russo", 15, 958.0, "Mirasol 218")
+    )
+    print(domicilios(lista))
+}
+
+fun domiciliosv2(compras: List<List<Any>>): List<String> {
+    return compras.map { compra -> compra[3].toString() }.toSet().toList().sorted()
+}
+
+
+
 
 fun u3ejercicio0002() {
     println("introduce nombres alumnos primaria: ")
-    var alumnPrimaria = pedirNombre()
+    val alumnPrimaria = pedirNombre()
 
     println("introduce nombres alumnos secundaria: ")
-    var alumSecundaria = pedirNombre()
+    val alumSecundaria = pedirNombre()
 
 
     println("Nombres unicos: ${alumnPrimaria union alumSecundaria}")
